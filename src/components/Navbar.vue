@@ -1,39 +1,75 @@
 <template>
-    <nav>
-        <div class="nav-wrapper grey darken-3">
-            <div class="container">
-                <router-link to="/" class="brand-logo">My-Spa-Logo</router-link>
-                <ul class="right hide-on-med-and-down">
+    <!--<v-app>
+        <v-navigation-drawer v-model="sidenav">
 
-                    <li>
-                        <router-link to="/">Dashboard</router-link>
-                    </li>
-                    <li v-if="!user">
-                        <router-link to="/login">Login</router-link>
-                    </li>
-                    <li v-if="!user">
-                        <router-link to="/register">Signup</router-link>
-                    </li>
-                    <li v-if="user">
-                        <router-link to="/profile">Profile</router-link>
-                    </li>
-                    <li v-if="user">
-                        <button v-on:click='logout' class="btn black">logout</button>
-                    </li>
-                </ul>
-            </div>
+        </v-navigation-drawer>
+        <v-toolbar fixed class="grey black-text">
+            <v-toolbar-title>
+                <router-link to="/" tag="span" style="cursor: pointer">DevMeetup</router-link>
+            </v-toolbar-title>
+            <v-toolbar-side-icon></v-toolbar-side-icon>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+                <v-btn flat>
+                    <router-link to="/">Dashboard</router-link>
+                </v-btn>
+                <v-btn flat v-if="!user">
+                    <router-link to="/login">Login</router-link>
+                </v-btn>
+                <v-btn flat v-if="!user">
+                    <router-link to="/register">Signup</router-link>
+                </v-btn>
+                <v-btn flat v-if="user">
+                    <router-link to="/profile">Profile</router-link>
+                </v-btn>
+                <v-btn flat v-if="user">
+                    <button v-on:click='logout' class="btn black white-text">logout</button>
+                </v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
+    </v-app>-->
+
+
+    <nav class="nav-wrapper grey darken-3">
+        <div class="container">
+            <router-link to="/" class="brand-logo center hide-on-small-only">My-Spa-Logo</router-link>
+            <ul class="left">
+
+                <li>
+                    <router-link to="/">Dashboard</router-link>
+                </li>
+                <li v-if="!user">
+                    <router-link to="/login">Login</router-link>
+                </li>
+                <li v-if="!user">
+                    <router-link to="/register">Signup</router-link>
+                </li>
+                <li v-if="user">
+                    <router-link to="/profile">Profile</router-link>
+                </li>
+                <li v-if="user">
+                    <button v-on:click='logout'>Logout</button>
+                    <!--<a class="waves-effect waves brown darken-2 btn">Logout</a>-->
+                </li>
+            </ul>
         </div>
     </nav>
 </template>
+
 <script>
     import firebase from 'firebase';
     export default {
         name: 'navbar',
         data() {
             return {
-                isLoggedIn: false,
-                currentUser: false,
-                user: null
+                sidenav: false,
+                user: null,
+                items: [
+                    { title: 'Home', icon: 'home', link: '/' },
+                    { title: 'Login', icon: 'message', link: '/login' },
+                    { title: 'Register', icon: 'message', link: '/register' },
+                    { title: 'Profile', icon: 'message', link: '/profile' }
+                ]
             }
         },
         created() {
@@ -57,4 +93,12 @@
             }
         }
     }
+
 </script>
+<style>
+    .strngBtn {
+        color: #BDBDBD;
+        font-weight: 900;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+</style>

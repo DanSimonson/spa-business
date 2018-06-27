@@ -5,7 +5,11 @@ import App from './App'
 import router from './router'
 import firebase from 'firebase'
 import Navbar from './components/Navbar.vue'
-Vue.component('navbar', Navbar);
+Vue.component('navbar', Navbar)
+import 'vuetify/dist/vuetify.min.css'
+import Vuetify from 'vuetify'
+ 
+Vue.use(Vuetify)
 Vue.config.productionTip = false
 
 let app = null;
