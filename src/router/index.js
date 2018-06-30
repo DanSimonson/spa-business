@@ -42,7 +42,8 @@ let router = new Router({
         requiresAuth: true
       }
     }
-  ]
+  ],
+  mode: 'history'
 })
 
 // router guards

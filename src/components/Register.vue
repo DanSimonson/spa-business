@@ -4,7 +4,7 @@
         <div id='spacer'></div>
         <div class="signup container">
             <form class="card-panel" @submit.prevent="signup">
-                <h2 class="center deep-purple-text">Signup</h2>
+                <h2 class="center brown-text">Signup</h2>
                 <div class="field">
                     <label for="email">Email</label>
                     <input id="email" type="email" v-model="email">
@@ -19,7 +19,7 @@
             </div>-->
                 <p class='red-text center' v-if='feedback'> {{ feedback }} </p>
                 <div class="field center">
-                    <button class="btn deep-purple">Signup</button>
+                    <button class="btn brown darken-4">Signup</button>
                 </div>
             </form>
         </div>
@@ -48,8 +48,8 @@
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                     .then(user => {
                         alert(`Account created for ${user.email}`)
-                        //this.$router.push({ name: 'Home' })
-                        this.$router.go({ path: this.$router.path });
+                        this.$router.push({ name: 'Home' })
+                        //this.$router.go({ path: this.$router.path });
                     },
                         err => {
                             alert(err.message)
