@@ -42,6 +42,7 @@
                             <h2>{{msg}}</h2>
                         </div>
                     </transition>
+                    <promo-list></promo-list>
                     <div class='foot-space'></div>
                     <div id='footer'>
                         <app-footer></app-footer>
@@ -54,10 +55,14 @@
 
 </template>
 <script>
+    import Promos from '@/components/Promos.vue'
     export default {
+        components: {
+            'promo-list': Promos
+        },
         data() {
             return {
-                title: 'Claim your promo deal!',
+                title: 'Claim your special member promo deal!',
                 msg: 'As a member you get one free massage every month. Come in and claim your massage.',
                 show: false,
                 backClass: 'bk',

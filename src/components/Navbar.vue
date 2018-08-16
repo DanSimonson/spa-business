@@ -1,30 +1,4 @@
 <template>
-    <!--<v-app>
-        <v-navigation-drawer v-model="drawer" temporary absolute height='400px' class='grey darken-4 white--text'>
-            <v-list>
-                <v-list-tile v-for="item in items" :key="item.title" :to="item.link">
-                    <v-list-tile-action>
-                        <v-icon>{{item.icon}}</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>{{item.title}}</v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
-
-        <v-toolbar fixed dark class="primary">
-            <v-toolbar-side-icon @click.stop="drawer= !drawer" class='strngBtnhidden-sm-and-up'></v-toolbar-side-icon>
-            <v-toolbar-title>
-                <router-link to="/" tag="span" style="cursor: pointer">Logo</router-link>
-            </v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-xs-only">
-                <v-btn flat v-for="item in items" :key="item.title">
-                    <v-icon left dark>{{item.icon}}</v-icon>
-                    {{item.title}}
-                </v-btn>
-            </v-toolbar-items>
-        </v-toolbar>
-    </v-app>-->
 
     <nav class="nav-wrapper grey darken-3">
         <div class="container">
@@ -41,7 +15,7 @@
                     <router-link to="/register">Signup</router-link>
                 </li>
                 <li v-if="user">
-                    <router-link to="/profile">Members</router-link>
+                    <router-link to="/profile">Member Promos</router-link>
                 </li>
                 <li v-if="user">
                     <button v-on:click='logout'>Logout</button>
@@ -60,12 +34,12 @@
                 drawer: null,
                 sidenav: false,
                 user: null,
-                items: [
+                /*items: [
                     { title: 'Home', icon: 'home', link: '/' },
                     { title: 'Login', icon: 'message', link: '/login' },
                     { title: 'Register', icon: 'message', link: '/register' },
                     { title: 'Profile', icon: 'message', link: '/profile' }
-                ]
+                ]*/
             }
         },
         created() {

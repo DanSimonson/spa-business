@@ -15,8 +15,9 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <product-list-one v-bind:products="products"></product-list-one>
-    <product-list-two v-bind:products2="products2"></product-list-two>
+    <product-list-one></product-list-one>
+    <product-list-two></product-list-two>
+    <!--<promo-list></promo-list>-->
     <app-footer></app-footer>
   </div>
 
@@ -25,15 +26,21 @@
 <script>
   import Navbar from '@/components/Navbar';
   import MobileMenu from '@/components/MobileMenu';
+  import ProductListOne from '@/components/ProductListOne.vue';
+  import ProductListTwo from '@/components/ProductListTwo.vue';
+  //import Promos from '@/components/Promos.vue'
   export default {
     name: 'Home',
     components: {
-      'mobile-menu': MobileMenu
+      'mobile-menu': MobileMenu,
+      'product-list-one': ProductListOne,
+      'product-list-two': ProductListTwo
+      //'promo-list': Promos
     },
     data() {
       return {
         home: 'Home Page',
-        products: [
+        /*products: [
           { name: 'Swedish Massage', price: 250 },
           { name: 'Shiatsu Massage', price: 300 },
           { name: 'Hot Stone Massage.', price: 350 },
@@ -44,7 +51,7 @@
           { name: 'Ear Candling', price: 400 },
           { name: 'foot reflexiology', price: 200 },
           { name: 'Chair Massage', price: 300 }
-        ],
+        ],*/
         spas: [
           { imageUrl: 'https://res.cloudinary.com/dmglopmul/image/upload/v1530226328/rocksSpa.jpg', id: 'aedrt4234', title: 'Relax your back' },
           { imageUrl: 'https://res.cloudinary.com/dmglopmul/image/upload/v1530226800/candlesSpa.jpg', id: 'reutw8694', title: 'Pamper your body' },

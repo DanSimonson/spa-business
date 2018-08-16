@@ -1,8 +1,8 @@
 <template>
-    <div id="product-list-one" class="brown lighten-3">
-        <h2>General Massage</h2>
+    <div id="promo-list" class="blue lighten-4">
+        <h2>General Member Promos</h2>
         <ul>
-            <li v-for="product in products">
+            <li v-for="product in saleProducts">
                 <span class="name">{{ product.name }}</span>
                 <span class="price">P{{ product.price }}</span>
             </li>
@@ -12,29 +12,31 @@
 
 <script>
     export default {
-        //props: ['products'],
         computed: {
-            products() {
-                return this.$store.getters.getProducts;
+            /*products() {
+                return this.$store.state.products
+            },*/
+            saleProducts() {
+                return this.$store.getters.saleProducts
             }
         }
     }
 </script>
 
 <style scoped>
-    #product-list-one {
+    #promo-list {
         color: darkolivegreen;
-        background: #FFF8B1;
+        background: #BBDEFB;
         box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
         margin-bottom: 30px;
         padding: 10px 20px;
     }
 
-    #product-list-one ul {
+    #promo-list ul {
         padding: 0;
     }
 
-    #product-list-one li {
+    #promo-list li {
         display: inline-block;
         margin-right: 10px;
         margin-top: 10px;

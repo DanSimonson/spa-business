@@ -4,16 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import firebase from 'firebase'
-import ProductListOne from './components/ProductListOne.vue'
-import ProductListTwo from './components/ProductListTwo.vue'
+//import ProductListOne from './components/ProductListOne.vue'
+//import ProductListTwo from './components/ProductListTwo.vue'
 import Footer from './components/Footer.vue'
 import Navbar from './components/Navbar.vue'
 Vue.component('navbar', Navbar)
-Vue.component('product-list-one', ProductListOne)
-Vue.component('product-list-two', ProductListTwo)
+//Vue.component('product-list-one', ProductListOne)
+//Vue.component('product-list-two', ProductListTwo)
 Vue.component('app-footer', Footer)
 import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify' 
+import { store } from './store/store'
+
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
@@ -25,6 +27,7 @@ firebase.auth().onAuthStateChanged(() => {
   // init app if not already created
   if(!app){
     app = new Vue({
+      store: store,
       el: '#app',
       router,
       components: { App },

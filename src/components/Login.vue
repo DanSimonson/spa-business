@@ -13,10 +13,6 @@
                     <label for="password">Password</label>
                     <input id="password" type="password" v-model="password">
                 </div>
-                <!--<div class="field">
-                    <label for="name">Alias</label>
-                    <input id="name" type="text" v-model="alias">
-                </div>-->
                 <p class='red-text center' v-if='feedback'> {{ feedback }} </p>
                 <div class="field center">
                     <button class="btn brown darken-4">Login</button>
@@ -42,8 +38,7 @@
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                     .then(user => {
                         alert(`You are logged in as ${user.email}`)
-                        this.$router.push({ name: 'Home' })
-                        //this.$router.go({ path: this.$router.path });
+                        this.$router.push({ name: 'profile' })
                     },
                         err => {
                             alert(err.message)
