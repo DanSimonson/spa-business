@@ -1,0 +1,23 @@
+{
+  "products": [
+    {
+      "id": 1001,
+      "image": "static/images/product-fullsize.png",
+      "description": "a product",
+      "name": "Swedish Massage",
+      "price": 250
+    },
+    {
+      "name": "Shiatsu Massage",
+      "price": 300
+    },
+    {
+      "name": "Hot Stone Massage",
+      "price": 350
+    },
+    {
+      "name": "Aromatherapy Massage",
+      "price": 350
+    }
+  ]
+}
