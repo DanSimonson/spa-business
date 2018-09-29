@@ -1,15 +1,9 @@
 <template>
-    <div id="slider" :style="{backgroundImage: 'url(' + images[index].url + ')'}">
-        <!--<h1>slider</h1>
-        <slides :image="images[1]" />
-        <div class="slideImage" :style="{'background-image': 'url(' + require('../assets/bowlsSpa.jpg') + ')'}">
+    <transition name="fade" mode="out-in" tag="div">
+        <div id="slider" :style="{backgroundImage: 'url(' + images[index].url + ')'}">
 
-        </div>-->
-
-        <!--<strong> {{images[2].url}}</strong>-->
-
-    </div>
-
+        </div>
+    </transition>
 </template>
 <script>
     import Slides from './Slides.vue'
@@ -55,9 +49,7 @@
 
         },
         computed: {
-            setImage() {
-                //return { backgroundImage: "url(" + this.images(this.index).url + ")" };
-            }
+
         },
         methods: {
             move() {
@@ -72,18 +64,48 @@
     }
 </script>
 <style scoped>
-    /*setImage {
-        /background-image: url("../assets/flowerSpa.jpg");
-    }*/
-
     #slider {
         height: 100vh;
         width: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        /*background-image: url("../assets/flowerSpa.jpg");
-        background-image: url("../assets/bowlsSpa.jpg");
-        url("https://res.cloudinary.com/dmglopmul/image/upload/v1538207585/projectPhotos/spa-business/bowlsSpa.jpg")*/
+    }
+
+    .fade-enter-active {
+        animation-name: fadeEnter;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+    }
+
+    .fade-move {
+        transition: all 1s;
+    }
+
+    .fade-leave-active {
+        animation-name: fadeLeave;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        position: absolute;
+    }
+
+    @keyframes fadeEnter {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeLeave {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
     }
 </style>
