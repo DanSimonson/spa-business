@@ -1,12 +1,12 @@
 <template>
     <div class="Navbar" v-bind:style="{ opacity: activeOpacity }">
         <div class="Navbar__Link Navbar__Link-brand">
-            <span>Body Essence Spa </span>
+            <span class="poppingText">Body Essence Spa </span>
         </div>
         <div class="Navbar__Link Navbar__Link-toggle">
             <i class="fas fa-bars"></i>
         </div>
-        <nav class="Navbar__Items">
+        <!--<nav class="Navbar__Items">
             <div class="Navbar__Link">
                 Home
             </div>
@@ -16,13 +16,22 @@
             <div class="Navbar__Link">
                 Contact
             </div>
-        </nav>
+        </nav>-->
         <nav class="Navbar__Items Navbar__Items--right">
             <div class="Navbar__Link">
-                Member Signin
+                <router-link to="/">Home</router-link>
             </div>
             <div class="Navbar__Link">
-                Member Signout
+                <router-link to="/profile">Member Specials</router-link>
+            </div>
+            <div class="Navbar__Link">
+                <router-link to="/contact">Contact</router-link>
+            </div>
+            <div v-if="!mySession" class="Navbar__Link">
+                <router-link to="/login">Login</router-link>
+            </div>
+            <div v-else class="Navbar__Link">
+                <button v-on:click='logout'>Logout</button>
             </div>
         </nav>
     </div>
@@ -126,6 +135,33 @@
 
 </script>
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+    @import url('https://fonts.googleapis.com/css?family=Proza+Libre');
+
+    .poppingText {
+        font-family: 'Cormorant Garamond', serif;
+        text-align: center;
+        font-size: 1.5em;
+        /*background-color: #fff;*/
+        color: #FFFF8D;
+        /*text-shadow: 0 1px #808d93,
+            -1px 0 #cdd2d5,
+            -1px 2px #808d93,
+            -2px 1px #cdd2d5,
+            -2px 3px #808d93,
+            -3px 2px #cdd2d5,
+            -3px 4px #808d93,
+            -4px 3px #cdd2d5,
+            -4px 5px #808d93,
+            -5px 4px #cdd2d5,
+            -5px 6px #808d93,
+            -6px 5px #cdd2d5,
+            -6px 7px #808d93,
+            -7px 6px #cdd2d5,
+            -7px 8px #808d93,
+            -8px 7px #cdd2d5;*/
+    }
+
     .Navbar {
         background-color: #212121;
         display: flex;
@@ -143,7 +179,9 @@
     .Navbar__Link {
         padding-right: 8px;
         font-size: 16px;
+        font-weight: bold;
         margin-right: 2px;
+        font-family: 'Proza Libre', sans-serif;
     }
 
     .Navbar__Link-brand {
@@ -179,6 +217,7 @@
 
         .Navbar__Items--right {
             margin-left: 0;
+            height: 260px;
         }
 
         .Navbar__ToggleShow {

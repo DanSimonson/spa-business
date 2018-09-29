@@ -4,6 +4,8 @@ import Home from "@/components/Home";
 import Login from "@/components/Login";
 import Register from "@/components/Register";
 import Profile from "@/components/Profile";
+import Contact from "@/components/Contact";
+import Slider from "@/components/Slider";
 import firebase from "firebase";
 
 Vue.use(Router);
@@ -27,6 +29,11 @@ let router = new Router({
       }*/
     },
     {
+      path: "/contact",
+      name: "contact",
+      component: Contact
+    },
+    {
       path: "/register",
       name: "register",
       component: Register
@@ -41,6 +48,11 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: "/slider",
+      name: "slider",
+      component: Slider
     }
   ],
   mode: "history"
