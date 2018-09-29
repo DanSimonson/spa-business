@@ -1,9 +1,26 @@
 <template>
-    <transition name="fade" mode="out-in" tag="div">
-        <div id="slider" :style="{backgroundImage: 'url(' + images[index].url + ')'}">
-
-        </div>
-    </transition>
+    <div>
+        <transition name="fade" mode="out-in" tag="div">
+            <div id="slider" :style="{backgroundImage: 'url(' + images[index].url + ')'}">
+                <div id="content">
+                    <div class="one"><i class="material-icons">
+                            spa
+                        </i>relax</div>
+                    <div class="two"><i class="material-icons">
+                            sentiment_very_satisfied
+                        </i>play</div>
+                    <div class="three"><i class="material-icons">
+                            fastfood
+                        </i>eat</div>
+                    <div class="four"><i class="material-icons">
+                            contact_mail
+                        </i> book</div>
+                    <!--<div class="five">5</div>
+                                                        <div class="six">6</div>-->
+                </div>
+            </div>
+        </transition>
+    </div>
 </template>
 <script>
     import Slides from './Slides.vue'
@@ -65,6 +82,8 @@
 </script>
 <style scoped>
     #slider {
+        display: flex;
+        flex-direction: column-reverse;
         height: 100vh;
         width: 100%;
         background-position: center;
@@ -107,5 +126,50 @@
         to {
             opacity: 0;
         }
+    }
+
+    #content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, minmax(100px, auto));
+        grid-gap: 1px;
+        /*max-width: 960px;
+        margin: 0 auto;*/
+        margin-top: 200px;
+        opacity: .5;
+        height: 75px;
+        overflow: hidden;
+        color: oldlace;
+        text-align: center;
+    }
+
+    #content div {
+        /*background: #3bbced;*/
+        padding: 30px;
+        margin-top: 1px;
+
+    }
+
+    #content div:nth-child(even) {
+        /*background: #777;*/
+        padding: 30px;
+        margin-top: 1px;
+
+    }
+
+    .one {
+        background: blue;
+    }
+
+    .two {
+        background: indigo;
+    }
+
+    .three {
+        background: green;
+    }
+
+    .four {
+        background: red;
     }
 </style>
