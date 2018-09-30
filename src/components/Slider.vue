@@ -10,7 +10,7 @@
                             sentiment_very_satisfied
                         </i>play</div>
                     <div class="three"><i class="material-icons">
-                            fastfood
+                            local_dining
                         </i>eat</div>
                     <div class="four"><i class="material-icons">
                             contact_mail
