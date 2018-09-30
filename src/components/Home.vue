@@ -56,7 +56,7 @@
             sentiment_very_satisfied
           </i>Spa Activities</p>
         <p class="pBody">Whether you're here for a while or just passing through there's always plenty of activities
-          happening througout the year.</p>
+          happening throughout the year.</p>
       </div>
       <!--<div class="six">6</div>
         <div class="seven">4</div>
@@ -76,7 +76,7 @@
       <div class="cThree">
         <p class="cHead">Body Essence Spa</p>
         <p class="cTitle">More than just food!</p>
-        <p class="cBody">Body Essence Spa Restaurant offers top quality resh ingredients that are not only healthy but
+        <p class="cBody">Body Essence Spa Restaurant offers top quality fresh ingredients that are not only healthy but
           very tasty and refined. come and experience sumptuous Philippine cuisine and a great atmosphere.</p>
 
       </div>
