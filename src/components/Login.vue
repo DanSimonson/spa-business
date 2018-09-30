@@ -7,11 +7,11 @@
                 <h2 class="center brown-text">Login</h2>
                 <div class="field">
                     <label for="email">Email</label>
-                    <input id="email" type="email" v-model="email">
+                    <input id="email" type="email" placeholder="test@gmail.com" v-model="email">
                 </div>
                 <div class="field">
                     <label for="password">Password</label>
-                    <input id="password" type="password" v-model="password">
+                    <input id="password" type="password" placeholder="test1234" v-model="password">
                 </div>
                 <p class='red-text center' v-if='feedback'> {{ feedback }} </p>
                 <div class="field center">
