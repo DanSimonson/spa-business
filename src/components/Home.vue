@@ -76,7 +76,7 @@
       <div class="cThree">
         <p class="cHead">Body Essence Spa</p>
         <p class="cTitle">More than just food!</p>
-        <p class="cBody">Body Essence Spa Restaurant offers top quality resh ingredients that are not onlyhealthy but
+        <p class="cBody">Body Essence Spa Restaurant offers top quality resh ingredients that are not only healthy but
           very tasty and refined. come and experience sumptuous Philippine cuisine and a great atmosphere.</p>
 
       </div>
