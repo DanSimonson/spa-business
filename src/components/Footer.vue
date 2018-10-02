@@ -4,7 +4,7 @@
         <p>Site built with
             <i class="fa fa-heart" aria-hidden="true"></i>
             <span>
-                <a href="https://dansimonson.github.io/">@mariposaweb.net</a>
+                <a href="https://mariposaweb.net/">@mariposaweb.net</a>
             </span>
         </p>
     </footer>
